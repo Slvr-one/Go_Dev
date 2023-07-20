@@ -85,10 +85,12 @@ func (s *Server) poll() {
 	pollDone()
 }
 
-// Hooks that may be overridden for integration tests.
+// Hooks  for integration tests.
 var (
 	pollSleep = time.Sleep
-	pollDone  = func() {}
+	pollDone  = func() {
+		// may be overridden
+	}
 )
 
 // isTagged makes an HTTP HEAD request to the given URL and reports whether it
